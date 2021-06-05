@@ -1,0 +1,10 @@
+email,birthDate,groups,sharedFolder
+sam.winton@gmail.com,1999/09/26,sudo,/StaffData
+kurt.cobain@gmail.com,1967/02/20,Nirvana,/Nevermind
+jimi.hendrix@woodstock.com,1942/11/27,,/Staffdata
+dave.grohl@foofighters.com,1969/01/14,FooFighters,
+kirk.hammett@metallica.com,1962/11/18,Metallica,
+james.hetfield@metallica.com,1963/08/03,Metallica,/MasterOfPuppets
+lars.ulrich@mtetallica.com,1963/12/26,,/MasterOfPuppets 
+john.lennon@beatles.com,1940/10/08,Beatles,/TheBeatles
+paul.mccartney@beatles.com1942/06/18,Beatles,/TheBeatles

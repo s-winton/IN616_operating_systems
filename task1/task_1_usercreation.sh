@@ -1,5 +1,20 @@
 #!/bin/bash
 
+#################################################################################################
+# Sam Winton 											#
+# Task 1: usercreation script 									#
+# Notes: 											#
+# Please run the script as sudo, as the alias command doesn't work unless it is ran as sudo,    #
+# however when I added sudo to the line, it created a file named "sudo" and outputted the       #
+# alias into that file instead of the created users .bashrc, I have no idea how to run the 	#
+# command without that problem happening as without sudo permission gets denied. 	        #
+#												#
+# No logging of the script has been done since I'm not sure how to log everthing, and only 1    #
+# secondary group can be specified in the csv file as I couldn't figure out how to add 2 or     #
+# more secondary groups if specified within the csv folder.  					#
+#################################################################################################
+
+
 #checks if the shared folder exists, if not then creates the folder in the /home directory
 #and change permissions to the folder to only be acessed by users of the shared group
 #also checks if a folder has been specified, if not then creates the default shared folder
@@ -94,6 +109,7 @@ fi
 }
 
 
+#displays otput to the user on what the script has done 
 runLoop(){
 for i  in "${!username[@]}"
 do
@@ -105,7 +121,8 @@ do
 
         #if user is in group sudo create the shutdown alias
         if [[ ${group[$i]} == *"sudo"* ]];then
-                echo "alias SD='sudo shutdown -h now'" >> sudo /home/${username[$i]}/.bashrc
+                echo "alias SD='sudo shutdown -h now'" >> /home/${username[$i]}/.bashrc
+		echo "created alias for ${username[$i]}"
         fi
 
         echo "=============================================================================="
@@ -168,7 +185,10 @@ read delimeter extra; clear
 
 
 
-
+# in the provided csv file some lines had two groups seperaed by a ",". I wasn't sure how to 
+# figure out how to add 2 secondary groups to a user if two groups were specified or how to seperate
+# the group names, so the sciprt can only take in 1 secondary group for a user. 
+ 
 while  IFS="${delimeter}" read -r email birthDate groups sharedFolder
 	do 
 		#creating arrays of groups, usernames, shared folder and passwords
@@ -184,9 +204,9 @@ while  IFS="${delimeter}" read -r email birthDate groups sharedFolder
 		year=$(echo "$birthDate" | sed 's/[/].*//')
 		password+=("$month$year")
 
-		group+=("$groups")
+		group+=("$groups")     
 		folder+=("$sharedFolder")
-
+		
 	let usercount++
 	done < <(tail -n +2 $file)	
 showDetails

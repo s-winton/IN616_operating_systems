@@ -1,4 +1,18 @@
 #!/bin/bash
+
+#################################################################################################
+# Sam Winton											#
+# Task 2: Compression And Backup								#
+# Description:											#
+# this script asks the user for a directory, I thnk the full path to the directory has to be 	#
+# specified. It then compresses the file, adding the .tar.gz extension to the name, then 	#
+# asks for deatils on transfering the compressed directory with all its contents to another	#
+# machine.											#
+#################################################################################################
+
+
+
+
 RED='\033[0;31m'
 NC='\033[0m'
 
