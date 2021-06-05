@@ -65,6 +65,8 @@ if no file path is specified, you will be prompted by the script to enter one wh
 
 ### Filling out details 
 
-The user will be prompted to name their archive file, once named .tar.gz will be appended to the archive and the directory will be compressed into the named gunzip file. Next, the user will be prompted for the IP address, port number, username, and directory path of the remote machine. A summary of all the informaiton provided will be displayed for confimation and the user will be asked if they would like to proceed. 
+The user will be prompted to name their archive file, once named .tar.gz will be appended to the archive and the directory will be compressed into the named gunzip file. Next, the user will be prompted for the IP address, port number, username, and directory path of the remote machine. A summary of all the informaiton provided will be displayed for confimation and the user will be asked if they would like to proceed.  
+
+Once the user confirms the details are correct, the SCP command will run and tranfer the file to the specified directory in the remote machine. If any errors occur, the user will be notifed. Once the file is sucessfully transferred, the user wil be notifed of completion and the script will exit. 
 
 
