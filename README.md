@@ -39,7 +39,7 @@ The script can also download a csv file provided by a url.
 ### Username and password generation  
 
 After a file has been ingested by the script, the script will read the contents of that file and genrates the usernames and passwords from the provided file. The username for a user is generated from the first letter of the email and the surname. if an email is as follows: john.smith@gmail.com then the username will be jsmith.  
-The password is generated from the users date of birth, which is the month and year appended together. if the user has a birthdate of 1999/09/28 then the password will be 901999. When the user logs in for the first time, they will be prompted to change their default password to something more secure.  
+The password is generated from the users date of birth, which is the month and year appended together. if the user has a birthdate of 1999/09/28 then the password will be 091999. When the user logs in for the first time, they will be prompted to change their default password to something more secure.  
 
 ### Creating The Enviroment And Defaults 
 
