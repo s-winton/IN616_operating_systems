@@ -2,14 +2,14 @@
 ***
 Author: Sam Winton  
 Student code: wintst1  
-Laste changes made: 2:23PM   
+Last changes made: 5:20PM   
 ***
 
 # Task 1: Usercreation Summary 
 
-The Usercreation script ingests a csv file containing helpful user informaiton to create a user enviroment, ie: email addresses, dob, secondary groups, and/or shared folder.
-A list of users is generated, then the script generates a username, password, groups if specified or not, shared folder if specified or not and a shutdown alais if the user 
-is in the "sudo" group. The script automates the usercreation process, and can create many users all at once elminating tedious enviroment setup for the system admin. Users 
+The Usercreation script ingests a csv file containing helpful user information to create a user environment, ie: email addresses, dob, secondary groups, and/or shared folder.
+A list of users is generated, then the script generates a username, password, groups if specified or not, shared folder if specified or not and a shutdown alias if the user 
+is in the "sudo" group. The script automates the usercreation process, and can create many users all at once eliminating tedious environment setup for the system admin. Users 
 are required to change their password upon first login. 
 
 ### Pre-requisites
@@ -20,7 +20,7 @@ The format of the csv file is as follows:
 EMAIL,YYYY/MM/DD,GROUPS,SHAREDFOLDER  
 email.example@gmail.com,1999/09/26,Staff,/StaffFolder  
 
-Note that the feild delimeter (,) can be a character of your choice, as the script asks you to specifiy what feild seperator your file uses.  
+Note that the field delimiter (,) can be a character of your choice, as the script asks you to specify what field separator your file uses.  
 
 ### Running the script  
 
@@ -38,18 +38,18 @@ The script can also download a csv file provided by a url.
 
 ### Username and password generation  
 
-After a file has been ingested by the script, the script will read the contents of that file and genrates the usernames and passwords from the provided file. The username for a user is generated from the first letter of the email and the surname. if an email is as follows: john.smith@gmail.com then the username will be jsmith.  
+After a file has been ingested by the script, the script will read the contents of that file and generates the usernames and passwords from the provided file. The username for a user is generated from the first letter of the email and the surname. if an email is as follows: john.smith@gmail.com then the username will be jsmith.  
 
 The password is generated from the users date of birth, which is the month and year appended together. if the user has a birthdate of 1999/09/28 then the password will be 091999. When the user logs in for the first time, they will be prompted to change their default password to something more secure.  
 
 ### Creating The Enviroment And Defaults 
 
-After a file has been ingested, a list of the users account that are ready to be created will be displayed on screen. Please review the list and make sure the user details are correct. The user be asked for confirmation before the enviroments are created. If no group or shared folder is specified for the user, then the script automatically creates the secondary group "default", the shared folder "/shareddefault", assigns the user to the default group and creates a symbolic link within the users home directory. The script will create the enviroments after confirmation and will notify the user of any errors. Once the user enviroments are successfully created, the script will exit.  
+After a file has been ingested, a list of the users account that are ready to be created will be displayed on screen. Please review the list and make sure the user details are correct. The user be asked for confirmation before the enviroments are created. If no group or shared folder is specified for the user, then the script automatically creates the secondary group "default", the shared folder "/shareddefault", assigns the user to the default group and creates a symbolic link within the users home directory. The script will create the environments after confirmation and will notify the user of any errors. Once the user environments are successfully created, the script will exit.  
 
 ***  
 # Task 2: Directory Backup  
 
-The backup script takes in a directory path provided through the command line or by input. The directory is copied and compressed into a gunzip file with all the file contents within that directroy compressed within the file. The user can choose to name the file with whatever they want. Once the directory is compressed the script will ask the user for details for the SCP protocol command which will transfer the compressed file to another machine.
+The backup script takes in a directory path provided through the command line or by input. The directory is copied and compressed into a gunzip file with all the file contents within that directory compressed within the file. The user can choose to name the file with whatever they want. Once the directory is compressed the script will ask the user for details for the SCP protocol command which will transfer the compressed file to another machine.
 
 ### Pre-requisites
 
@@ -65,8 +65,8 @@ if no file path is specified, you will be prompted by the script to enter one wh
 
 ### Filling out details 
 
-The user will be prompted to name their archive file, once named .tar.gz will be appended to the archive and the directory will be compressed into the named gunzip file. Next, the user will be prompted for the IP address, port number, username, and directory path of the remote machine. A summary of all the informaiton provided will be displayed for confimation and the user will be asked if they would like to proceed.  
+The user will be prompted to name their archive file, once named .tar.gz will be appended to the archive and the directory will be compressed into the named gunzip file. Next, the user will be prompted for the IP address, port number, username, and directory path of the remote machine. A summary of all the information provided will be displayed for confirmation and the user will be asked if they would like to proceed.  
 
-Once the user confirms the details are correct, the SCP command will run and tranfer the file to the specified directory in the remote machine. If any errors occur, the user will be notifed. Once the file is sucessfully transferred, the user wil be notifed of completion and the script will exit. 
+Once the user confirms the details are correct, the SCP command will run and transfer the file to the specified directory in the remote machine. If any errors occur, the user will be notified. Once the file is successfully transferred, the user wil be notified of completion and the script will exit. 
 
 
